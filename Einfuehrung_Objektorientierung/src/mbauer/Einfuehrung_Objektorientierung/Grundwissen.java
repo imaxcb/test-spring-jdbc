@@ -6,12 +6,12 @@ public class Grundwissen {
 		Kuh elsa = new Kuh();
 		elsa.name = "elsa";
 		elsa.milchProTag = 30;
-		elsa.farbe = "lila und weiß";
+		elsa.farbe = "lila und weiss";
 		elsa.preis.wert = 345.67;
 
-//		Euro elsaPreis = new Euro();
-//		elsaPreis.wert = 123.78;
-//		elsa.preis = elsaPreis;
+		// Euro elsaPreis = new Euro();
+		// elsaPreis.wert = 123.78;
+		// elsa.preis = elsaPreis;
 
 		Kuh Gerlinde = new Kuh();
 		Gerlinde.name = "Gerlinde";
@@ -21,6 +21,6 @@ public class Grundwissen {
 
 		System.out.println(elsa.preis);
 		System.out.println(Gerlinde.preis);
-//		System.out.println(elsaPreis);
+		// System.out.println(elsaPreis);
 	}
 }
