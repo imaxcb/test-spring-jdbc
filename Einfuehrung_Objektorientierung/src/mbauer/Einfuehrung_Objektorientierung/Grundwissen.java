@@ -7,6 +7,6 @@ public class Grundwissen {
 		
 		System.out.println(klasse1.name);
 		System.out.println(klasse1.lehrer);
-
+		System.out.println("Das ist ein Test!");
 	}
 }
