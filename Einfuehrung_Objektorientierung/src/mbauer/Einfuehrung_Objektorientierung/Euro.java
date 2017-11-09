@@ -8,7 +8,7 @@ public class Euro {
 	}
 
 	public double wert = 0.0;
-	public final String zeichen = "â‚¬";
+	public final String zeichen = "€";
 
 	@Override
 	public String toString() {
