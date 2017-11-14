@@ -2,6 +2,11 @@
 package mbauer.Einfuehrung_Objektorientierung;
 
 public class Mensch {
-	public String name = "Willi Wacker";
-	public int alter = 42;
+
+	public void laufen() {
+		System.out.println("laufe...");
+	}
+
+	public String name;
+	public int alter;
 }

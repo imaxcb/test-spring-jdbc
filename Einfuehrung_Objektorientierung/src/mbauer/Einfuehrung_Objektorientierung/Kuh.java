@@ -2,6 +2,11 @@
 package mbauer.Einfuehrung_Objektorientierung;
 
 public class Kuh {
+	public Kuh(String name, int milchProTag) {
+		this.name = name;
+		this.milchProTag = milchProTag;
+	}
+
 	public String name = "";
 	public Euro preis = new Euro(7);
 	public boolean istKrank = false;

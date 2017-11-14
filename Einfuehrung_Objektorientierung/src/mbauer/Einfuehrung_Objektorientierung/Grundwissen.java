@@ -1,13 +1,23 @@
 // 20171109: mbauer
 package mbauer.Einfuehrung_Objektorientierung;
 
+import java.util.Scanner;
+import java.util.jar.Attributes.Name;
+
 public class Grundwissen {
 	public static void main(String[] args) {
-		Klasse klasse1 = new Klasse("Revengers", "Basti");
+		Scanner tastatur = new Scanner(System.in);
 
-		System.out.println(klasse1.name);
-		System.out.println(klasse1.lehrer);
-		System.out.println("Das ist ein Test!");
-		System.out.println("Das Auch!");
+		Mensch ich = new Mensch();
+
+		System.out.print("Name: ");
+		ich.name = tastatur.nextLine();
+
+		System.out.println("Alter: ");
+		ich.alter = tastatur.nextInt();
+
+		System.out.printf("Name: %s%nAlter: %d", ich.name, ich.alter);
+		
+		ich.laufen();
 	}
 }
