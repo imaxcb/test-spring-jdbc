@@ -18,7 +18,7 @@ public class _06 {
 		int treppenSollHoehe = 9;
 		int distanz = treppenSollHoehe;
 		while (treppenIstHoehe < treppenSollHoehe) {
-			
+
 			// Ziegel legen
 			while (k.PositionYGeben() <= distanz) {
 				k.Hinlegen();
@@ -28,7 +28,7 @@ public class _06 {
 			k.LinksDrehen();
 			k.LinksDrehen();
 			int stepcnt = 0;
-			
+
 			// Zurücklaufen
 			while (stepcnt < distanz - treppenIstHoehe) {
 				k.Schritt();
