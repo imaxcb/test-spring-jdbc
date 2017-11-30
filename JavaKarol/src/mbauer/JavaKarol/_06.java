@@ -12,10 +12,11 @@ public class _06 {
 
 		Welt welt = new Welt(breite, laenge, hoehe);
 		Roboter k = new Roboter(startX, startY, startBlickrichtung, welt);
-		k.VerzoegerungSetzen(50);
+		Roboter l = new Roboter(startX+1, startY+1, startBlickrichtung, welt);
+		k.VerzoegerungSetzen(25);
 
 		int treppenIstHoehe = 0;
-		int treppenSollHoehe = 9;
+		int treppenSollHoehe = 5;
 		int distanz = treppenSollHoehe;
 		while (treppenIstHoehe < treppenSollHoehe) {
 

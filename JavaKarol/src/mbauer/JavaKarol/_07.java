@@ -1,5 +1,7 @@
-// 20171116: mbauer: Ganze Fläche mit Pyramide
+// 20171123: mbauer: Ganze Fläche mit Pyramide
 package mbauer.JavaKarol;
+
+import java.time.Year;
 
 import javakarol.Roboter;
 import javakarol.Welt;
@@ -9,10 +11,17 @@ public class _07 {
 		int breite = 10, laenge = 10, hoehe = 10;
 		int startX = 1, startY = 1;
 		char startBlickrichtung = 'S';
+		int istHoehe = 0;
+		int sollHoehe = 1;
+		if (breite < laenge) {
+			sollHoehe = (breite - 1) / 2;
+		} else {
+			sollHoehe = (laenge - 1) / 2;
+		}
 
 		Welt welt = new Welt(breite, laenge, hoehe);
 		Roboter k = new Roboter(startX, startY, startBlickrichtung, welt);
-		k.VerzoegerungSetzen(50);
+		k.VerzoegerungSetzen(15);
 
 		// ersten Ziegel legen
 		k.Schritt();
@@ -24,28 +33,48 @@ public class _07 {
 		k.LinksDrehen();
 		// Ende ersten Ziegel legen
 
-		while ((k.PositionXGeben() < breite) && !k.IstWand()) {
-			while (!k.IstWand()) {
+		int tempLaenge = laenge;
+		int tempBreite = breite;
+		int cnt = 0;
+		while (istHoehe < sollHoehe) {
+			while (k.PositionXGeben() < tempBreite) {
+				for (int i = 1; i < tempLaenge; i++) {
+					if (k.PositionXGeben() < tempBreite) {
+						k.Hinlegen();
+						k.Schritt();
+						cnt += 1;
+					}
+				}
+				k.LinksDrehen();
 				k.Hinlegen();
 				k.Schritt();
-			}
-			k.LinksDrehen();
-			if (!k.IstWand()) {
-				k.Hinlegen();
-				k.Schritt();
-			}
-			k.LinksDrehen();
+				k.LinksDrehen();
 
-			while (!k.IstWand()) {
-				k.Hinlegen();
-				k.Schritt();
+				for (int i = 1; i < tempBreite; i++) {
+					k.Hinlegen();
+					k.Schritt();
+					cnt += 1;
+				}
+				
+				if (k.PositionXGeben() < tempBreite) {
+					k.RechtsDrehen();
+					k.Hinlegen();
+					k.Schritt();
+					k.RechtsDrehen();
+				} else {
+					k.LinksDrehen();
+					cnt = 1;
+					while (cnt < tempBreite - 1) {
+						k.Schritt();
+						cnt += 1;
+					}
+					k.LinksDrehen();
+				}
+
 			}
-			k.RechtsDrehen();
-			if (!k.IstWand()) {
-				k.Hinlegen();
-				k.Schritt();
-			}
-			k.RechtsDrehen();
+			tempBreite -= 2;
+			tempLaenge -= 2;
+			istHoehe += 1;
 		}
 	}
 }
