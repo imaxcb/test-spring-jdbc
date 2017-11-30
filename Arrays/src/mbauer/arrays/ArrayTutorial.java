@@ -1,9 +1,10 @@
+// 20171130: mbauer
+
 package mbauer.arrays;
 
 public class ArrayTutorial {
 	public static void main(String[] args) {
 		int[] myArray = new int[5];
-		double[] kommaZahlArray = new double[10];
 
 		myArray[0] = 42;
 		myArray[1] = 8;
